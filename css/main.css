@@ -6,6 +6,35 @@ html {
   font-size: 62.5%;
 }
 
+.logo {
+  width: 100%;
+  background-color: #0C4085;
+  height: 10rem;
+}
+.logo img {
+  display: block;
+  width: 35%;
+  margin: auto auto;
+}
+@media (max-width: 600px) {
+  .logo img {
+    width: 65%;
+  }
+}
+
+.add {
+  text-align: center;
+  margin-top: 3rem;
+}
+.add a {
+  font-size: 4rem;
+  background-color: #4e34e4;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+}
+
 .containerMatela {
   display: flex;
   width: 100%;
@@ -82,10 +111,71 @@ html {
   font-size: 4rem;
   margin-bottom: 1rem;
 }
+.containerMatela .btn .mod a {
+  background-color: #e2ec53;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+}
 .containerMatela .btn .suppr {
   margin-top: 3rem;
   font-size: 4rem;
   margin-bottom: 1rem;
+}
+.containerMatela .btn .suppr a {
+  background-color: #e76157;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.pagination {
+  margin-top: 3rem;
+  text-align: center;
+}
+.pagination a {
+  text-decoration: none;
+  color: black;
+  border: 0.3rem solid black;
+  padding: 0.5rem;
+}
+
+.inputContainer {
+  margin: 1rem 0;
+  text-align: center;
+  display: flex;
+  font-size: 1.6rem;
+}
+@media (max-width: 600px) {
+  .inputContainer {
+    flex-direction: column;
+  }
+}
+.inputContainer label {
+  margin-right: 1rem;
+  width: 50%;
+  text-align: right;
+}
+@media (max-width: 600px) {
+  .inputContainer label {
+    width: 100%;
+    text-align: center;
+  }
+}
+.inputContainer .observation {
+  vertical-align: top;
+}
+@media (max-width: 600px) {
+  .inputContainer .Champ-selection {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+.button-form {
+  text-align: center;
 }
 
 /*# sourceMappingURL=main.css.map */

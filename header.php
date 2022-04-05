@@ -10,8 +10,8 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="logo-warpper">
+    
+        <div class="logo">
             <a href="index.php">
                 <img src="img/logo.png" alt="logo Literie 3000" class="logo">
             </a>
