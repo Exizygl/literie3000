@@ -7,7 +7,7 @@ $matelas = $query->fetchAll();
 
 include("header.php") ?>
 <div>
-    <a href="add.php">Ajout d'article</a>
+    <a href="addinfo.php">Ajout d'article</a>
 </div>
 
 
@@ -17,12 +17,20 @@ include("header.php") ?>
     ?>
         <div>
             <div>
-                <img src="<?= $item["picture"] ?>" alt="" srcset="" class="">
+                <img src="img/<?= $item["picture"] ?>" alt="" srcset="" class="">
             </div>
             <div>
                 <?=$item["name"]?>
                 <?=$item["marque"]?>
-                <?=$item["taille"]?>
+                <?=$item["dimension"]?>
+            </div>
+            <div>
+                <?=$item["prix"]?>
+                <?=$item["reduction"]?>
+            </div>
+            <div>
+                <a href="addinfo.php?id=<?= $item["id"] ?>">modifier</a>
+                <a href="delete.php?id=<?= $item["id"] ?>">supprimer</a>
             </div>
         </div>
 
