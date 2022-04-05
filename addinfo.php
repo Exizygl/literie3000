@@ -41,25 +41,11 @@ if (!empty($_POST)) {
             $db = new PDO($dsn, "root", "");
 
             if (empty($_FILES["picture"]["name"])) {
-
-
-
-                $query = $db->prepare("UPDATE matelas SET
-        name = :name, marque = :marque, dimension = :dimension, prix = :prix, reduction = :reduction  WHERE id LIKE :id");
-
-                //associe variable à chaque requete
-                $query->bindParam(":id", $id);
-                $query->bindParam(":name", $name);
-                $query->bindParam(":marque", $marque);
-                $query->bindParam(":dimension", $dimension);
-                $query->bindParam(":prix", $prix);
-                $query->bindParam(":reduction", $reduction);
-
-                if ($query->execute()) {
-                    header("Location: index.php");
-                }
+                $picture = $item["picture"];
             } else {
                 $picture = $_FILES["picture"]["name"];
+
+            }
                 $query = $db->prepare("UPDATE matelas SET
                 name = :name, marque = :marque, dimension = :dimension, picture = :picture, prix = :prix, reduction = :reduction  WHERE id LIKE :id");
 
@@ -76,7 +62,7 @@ if (!empty($_POST)) {
                     header("Location: index.php");
                 }
             }
-        }
+        
     } else {
 
         $name = trim(strip_tags($_POST["name"]));
@@ -123,19 +109,10 @@ if (!empty($_POST)) {
         }
     }
 }
+include("header.php");
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajout</title>
-</head>
-
-<body>
     <form action="" method="post" enctype="multipart/form-data">
 
 
@@ -206,7 +183,7 @@ if (!empty($_POST)) {
                     ?>
 
                     <div class="form-group">
-                        <label for="inputPrixReduction">Prix:</label>
+                        <label for="inputPrixReduction">Prix réduction:</label>
                         <input id="inputPrixReduction" name="prixReduction" type="text" value=<?= isset($reduction) ? $reduction : "" ?>>
                         <?php
                         if (isset($errors["prixreduc"])) {

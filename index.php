@@ -15,22 +15,52 @@ include("header.php") ?>
     <?php
     foreach ($matelas as $item) {
     ?>
-        <div>
-            <div>
+        <div class="containerMatela">
+            <div class="imageMatela">
                 <img src="img/<?= $item["picture"] ?>" alt="" srcset="" class="">
             </div>
-            <div>
-                <?=$item["name"]?>
-                <?=$item["marque"]?>
-                <?=$item["dimension"]?>
+            <div class="information">
+                <div class="name">
+                    <?= $item["name"] ?>
+                </div>
+                <div class="marque">
+                    <?= $item["marque"] ?>
+                </div>
+                <div class="dimension">
+                    <?= $item["dimension"] ?>
+                </div>
             </div>
-            <div>
-                <?=$item["prix"]?>
-                <?=$item["reduction"]?>
+            <div class="prix">
+
+                <?php
+                if ($item["reduction"] === "") {
+
+
+                ?>
+                    <div class="prixNormal">
+                        <?= $item["prix"] ?>
+                    </div>
+                <?php
+                } else {
+                ?>
+                    <div class="prixBarrer">
+                        <?= $item["prix"] ?>
+                    </div>
+                    <div class="reduction">
+                        <?= $item["reduction"] ?>
+                    </div>
+
+                <?php
+                }
+                ?>
             </div>
-            <div>
-                <a href="addinfo.php?id=<?= $item["id"] ?>">modifier</a>
-                <a href="delete.php?id=<?= $item["id"] ?>">supprimer</a>
+            <div class="btn">
+                <div class="mod">
+                    <a href="addinfo.php?id=<?= $item["id"] ?>">modifier</a>
+                </div>
+                <div class="suppr">
+                    <a href="delete.php?id=<?= $item["id"] ?>">supprimer</a>
+                </div>
             </div>
         </div>
 
